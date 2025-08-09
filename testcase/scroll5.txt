@@ -1,0 +1,3 @@
+["foo@abc.com", "bar@def.net"]
+["baz@abc", "qux.com"]
+^\D+@\w+\.\w+$

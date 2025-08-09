@@ -1,0 +1,3 @@
+["aaa", "abb", "acc"]
+["bbb", "bcc", "bca"]
+^[a].+$
