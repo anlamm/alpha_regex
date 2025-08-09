@@ -14,7 +14,7 @@ Algorithm highlight:
 4. There is also unroll_and_split algorithm introduced in the paper mentioned for further elimination (details are omitted here ...)
 
 '''
-
+import json
 import re
 import heapq
 from typing import List, Set, Optional, Tuple
@@ -655,3 +655,12 @@ def generate_gree_expression(valid_strings: list[str], invalid_strings: list[str
             return state2str(state)
 
     return "no solution"
+
+def parse(valids: str, invalids: list[str]) -> Tuple[List[str], List[str]]:
+    return json.loads(valids), json.loads(invalids)
+
+if __name__ == "__main__":
+    valids: str = input("Enter valid strings (e.g. [\"123\", \"456\"]) : ")
+    invalids: str = input("Enter invalid strings (e.g. [\"abc\", \"def\"]) : ")
+    valid_strings, invalid_Strings = parse(valids, invalids)
+    print("Regex generated: ", generate_gree_expression(valid_strings, invalid_Strings))
